@@ -30,11 +30,11 @@ def get_result(cat,keyword,page_count=5):
         page = requests.get(base_url)
         bs = BS(page.text)
         content = bs.find_all('div', {'id':'resultat'})
-        adSer = {}
+        
         if len(content)>0:
             ads = content[0].find_all('div', {'class':['annonce annonce_store','annonce']})
             for ad in ads:
-                
+                adSer = {}
                 title = ad.find('h2', {'itemprop':'name'})
                 desc = ad.find('span', {'class':'annonce_description_preview'})
                 if title != None :
