@@ -1,1 +1,1 @@
-web: gunicorn microblog:app  --timeout 10000 --keep-alive 5 --log-level debug
+web: gunicorn app:app  --timeout 10000 --keep-alive 5 --log-level debug
