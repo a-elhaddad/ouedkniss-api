@@ -34,12 +34,13 @@ def get_result(cat,keyword,page_count=5):
         if len(content)>0:
             ads = content[0].find_all('div', {'class':['annonce annonce_store','annonce']})
             for ad in ads:
-
+                
                 title = ad.find('h2', {'itemprop':'name'})
                 desc = ad.find('span', {'class':'annonce_description_preview'})
                 if title != None :
                     if keyword.lower() in title.contents[0].lower() or desc != None and len(desc.contents)>=1 and keyword.lower() in desc.contents[0].lower():
                         adSer["title"]=title.contents[0]
+                        print(adSer["title"])
                         if ad.find("a") != None :
                             link = ad.find("a").get('href')
                             desc_tech = ad.find('span', {'class':'annonce_get_description'})
