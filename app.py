@@ -21,12 +21,12 @@ def scrap(cat,keyword):
 def get_result(cat,keyword,page_count=5):
     adsSer =[]
     adSerIds = []
-    for index in range(0,page_count) :
+    for index in range(1,page_count) :
         print("In page "+str(index))
         print("In cat "+str(cat))
         print("with keyword "+str(keyword))
         print("----------------------------------")
-        base_url = "https://www.ouedkniss.com/"+cat+"/"+str(index)
+        base_url = "https://www.ouedkniss.com/annonces/index.php?c="+cat+"&keywords="+str(keyword)+"&p="+str(index)
         page = requests.get(base_url)
         bs = BS(page.text)
         content = bs.find_all('div', {'id':'resultat'})
