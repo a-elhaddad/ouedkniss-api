@@ -60,7 +60,7 @@ def get_result(cat,keyword,page_count=5):
                             if id != None and len(id.contents)>=1:
                                 adSer["id"]=id.contents[0]
                             
-                            adSer["image"]="https://img3.ouedkniss.com/photos_annonces/"+adSer["id"]+"/Min_large.jpg"
+                            adSer["image"]="https://img1.ouedkniss.com/photos_annonces/"+adSer["id"]+"/Min_large.jpg"
                             if adSer["id"] not in adSerIds :
                                 adSerIds.append(adSer["id"])
                                 adsSer.append(adSer)
