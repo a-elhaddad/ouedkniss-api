@@ -45,7 +45,7 @@ def get_result(cat,keyword,page_count=5):
                             desc_tech = ad.find('span', {'class':'annonce_get_description'})
                             desc = ad.find('span', {'class':'annonce_description_preview'})
                             city = ad.find('span', {'class':'titre_wilaya'})
-                            image = ad.find('img', {'itemprop':'image'}).get("data-src")
+                            #image = ad.find('img', {'itemprop':'image'}).get("data-src")
                             price = ad.find('span', {'itemprop':'price'})
                             id = ad.find('span', {'class':'annonce_numero'})
                             if link != None :
@@ -58,8 +58,8 @@ def get_result(cat,keyword,page_count=5):
                                 adSer["price"]=price.contents[0]
                             if id != None and len(id.contents)>=1:
                                 adSer["id"]=id.contents[0]
-                            if image != None :
-                                adSer["image"]=image
+                            #if image != None :
+                                #adSer["image"]=image
                             if adSer["id"] not in adSerIds :
                                 adSerIds.append(adSer["id"])
                                 adsSer.append(adSer)
